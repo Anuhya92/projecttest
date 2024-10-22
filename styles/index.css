@@ -1,0 +1,508 @@
+/*Common variables used in the pages*/
+/* Colors */
+/* Font colors */
+/* Home Section */
+.home {
+  min-height: calc(100vh - 63px);
+  background: url("../images/image1.png");
+  background-size: cover;
+  background-position: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  text-align: center;
+}
+.home .content {
+  /* Search Bar Styling */
+  /* Scroll Down text */
+}
+.home .content .title {
+  font-size: 48px;
+  font-family: "Josefin Sans";
+  font-weight: bold;
+  letter-spacing: 4.8px;
+  line-height: 26px;
+}
+.home .content .subtitle {
+  margin: 15px 0;
+  font-size: 22px;
+  font-family: "Josefin Sans";
+  letter-spacing: 6.82px;
+  color: #ffffff;
+}
+.home .content .search-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.home .content .search-container .search-input {
+  padding: 15px 30px;
+  font-size: 14px;
+  font-family: "Josefin Sans";
+  max-width: 310px;
+  width: 100%;
+  border: none;
+}
+.home .content .search-container .search-button {
+  padding: 13px 30px;
+  font-size: 1rem;
+  background-color: #5869ed;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 1px solid #ffffff;
+}
+.home .content .search-container .search-button:hover {
+  cursor: pointer;
+  background-color: #496bfe;
+}
+.home .content .scroll-text {
+  margin-top: 50px;
+  font-size: 14px;
+  font-family: "Josefin Sans";
+  letter-spacing: 2.8px;
+  line-height: 26px;
+  cursor: pointer;
+}
+.home .content .arrow-down {
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Navigation */
+.main-nav {
+  background-color: #5869ed;
+  padding: 20px 0;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+.main-nav .menu-btn,
+.main-nav .menu-icon {
+  display: none;
+}
+.main-nav .nav-right {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.main-nav .nav-right li {
+  margin: 0 20px;
+}
+.main-nav .nav-right li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+.main-nav .nav-right li a:hover {
+  text-decoration: underline;
+}
+
+/*Mobile and Tablet*/
+@media only screen and (min-width: 320px) and (max-width: 700px) {
+  .home .content .title {
+    font-size: 40px;
+  }
+  .home .content .subtitle {
+    font-size: 18px;
+  }
+  .home .content .search-container {
+    padding: 10px;
+  }
+  .home .content .search-container .search-input {
+    padding: 12px 30px;
+    font-size: 10px;
+  }
+  .home .content .search-container .search-button {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+  .main-nav {
+    display: block;
+    /* Menu icon */
+  }
+  .main-nav .nav-left {
+    float: left;
+  }
+  .main-nav .nav-right {
+    max-height: none;
+    clear: both;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .main-nav .nav-right li {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+  }
+  .main-nav .nav-right li:hover {
+    background: #302c2c;
+  }
+  .main-nav .menu-icon {
+    cursor: pointer;
+    display: block;
+    float: right;
+    padding: 10px;
+    position: relative;
+  }
+  .main-nav .menu-icon .navicon {
+    background: #e8e8e8;
+    display: block;
+    height: 2px;
+    position: relative;
+    -webkit-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+    width: 18px;
+  }
+  .main-nav .menu-icon .navicon:before {
+    top: 5px;
+  }
+  .main-nav .menu-icon .navicon:after {
+    top: -5px;
+  }
+  .main-nav .menu-icon .navicon:before, .main-nav .menu-icon .navicon:after {
+    background: #e8e8e8;
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    -webkit-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+    width: 100%;
+  }
+  .main-nav .menu-btn {
+    display: none;
+  }
+  .main-nav .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+  }
+  .main-nav .menu-btn:checked ~ .menu-icon .navicon::before {
+    top: 0;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  .main-nav .menu-btn:checked ~ .menu-icon .navicon::after {
+    top: 0;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  .main-nav .menu-btn:checked ~ .nav-right {
+    max-height: 240px;
+  }
+  .main-nav .menu-btn:checked ~ .nav-right li {
+    display: block;
+  }
+}
+/*Common variables used in the pages*/
+/* Colors */
+/* Font colors */
+.choose-us {
+  min-height: calc(100vh - 63px);
+  background: url("../images/choose-us-bg.png") center center no-repeat fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.choose-us .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+  gap: 50px;
+}
+.choose-us .content .left-content h2 {
+  font-size: 36px;
+  letter-spacing: 2px;
+  color: #ffffff;
+}
+.choose-us .content .left-content .description {
+  margin: 30px 0;
+}
+.choose-us .content .right-content .top-image {
+  margin: 0 -20px;
+}
+.choose-us .content .right-content .bottom-image {
+  margin: 5px 30px;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 700px) {
+  .content .right-content img {
+    margin: 0 !important;
+  }
+}
+.how-it-works {
+  background-color: #333333;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.how-it-works .content img {
+  width: 100%;
+}
+
+/*Common variables used in the pages*/
+/* Colors */
+/* Font colors */
+.spain-section .part1,
+.spain-section .part2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: calc(100vh - 63px);
+  background: url("../images/section-3-bg.png") center center no-repeat fixed;
+}
+.spain-section .part1 .container-sm,
+.spain-section .part2 .container-sm {
+  max-width: 543px;
+  width: 100%;
+  padding: 25px;
+}
+.spain-section .part1 .container-sm.background,
+.spain-section .part2 .container-sm.background {
+  opacity: 90%;
+  background-color: #232323;
+}
+.spain-section .part1 .container-sm h3,
+.spain-section .part2 .container-sm h3 {
+  font-family: "Josefin-Sans";
+  font-size: 20px;
+  line-height: 26px;
+  word-spacing: 1.5px;
+  color: #ffffff;
+  margin: 15px 0;
+}
+.spain-section .part1 .container-sm h3:hotel-name,
+.spain-section .part2 .container-sm h3:hotel-name {
+  color: #e8e8e8;
+}
+.spain-section .part1 .container-sm .description,
+.spain-section .part2 .container-sm .description {
+  margin: 10px 0 30px;
+}
+.spain-section .part2 {
+  min-height: calc(100vh - 63px);
+  background: url("../images/section-3-bg2.png") center center no-repeat fixed;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 700px) {
+  .container-sm {
+    max-width: 300px;
+    width: 100%;
+    padding: 10px;
+  }
+}
+/*Common variables used in the pages*/
+/* Colors */
+/* Font colors */
+.testimonial {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: calc(100vh - 63px);
+  background: url("../images/testimonial-bg.png") center center no-repeat fixed;
+}
+.testimonial .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.testimonial .content .header {
+  text-align: center;
+  margin: 40px 0;
+  font-size: 36px;
+  letter-spacing: 2px;
+  color: #ffffff;
+}
+.testimonial .content .user-testimonial {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
+  color: #ffffff;
+}
+.testimonial .content .user-testimonial .right-content {
+  padding: 40px;
+  background-color: #333333;
+}
+.testimonial .content .user-testimonial .right-content .tourist-name {
+  font-family: "Josefin Sans";
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: #ffffff;
+}
+.testimonial .content .user-testimonial .right-content .tourist-comment {
+  font-family: "Josefin Sans";
+  font-size: 16px;
+  letter-spacing: 2px;
+  line-height: 26px;
+  color: #ffffff;
+  margin-top: 30px;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 700px) {
+  .user-testimonial {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+/*Common variables used in the pages*/
+/* Colors */
+/* Font colors */
+.footer {
+  min-height: 271px;
+  background-color: #232323;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.footer .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.footer .content .header {
+  font-family: "Josefin Sans";
+  font-size: 24px;
+  letter-spacing: 3.36px;
+  color: #ffffff;
+}
+.footer .content .description {
+  font-family: "Josefin Sans";
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 1.6px;
+  color: #ffffff;
+}
+
+/*Common variables used in the pages*/
+/* Colors */
+/* Font colors */
+.content {
+  max-width: 1173px;
+  width: 100%;
+}
+
+.header {
+  font-size: 36px;
+  letter-spacing: 2px;
+  color: #ffffff;
+}
+
+.description {
+  color: #ffffff;
+  font-family: "Josefin Sans";
+  font-size: 16px;
+  line-height: 26px;
+  word-spacing: 1.6px;
+}
+
+.btn-primary {
+  width: 228px;
+  height: 63px;
+  font-family: "Aleo";
+  color: #ffffff;
+  background-color: #496bfe;
+}
+.btn-primary:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 700px) {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}

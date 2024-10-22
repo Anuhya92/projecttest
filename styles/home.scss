@@ -1,0 +1,229 @@
+@import "./_variables";
+
+/* Home Section */
+.home {
+  min-height: calc(100vh - 63px);
+  background: url("../images/image1.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+
+  .content {
+    .title {
+      font-size: 48px;
+      font-family: "Josefin Sans";
+      font-weight: bold;
+      letter-spacing: 4.8px;
+      line-height: 26px;
+    }
+
+    .subtitle {
+      margin: 15px 0;
+      font-size: 22px;
+      font-family: "Josefin Sans";
+      letter-spacing: 6.82px;
+      color: $primary-text-color;
+    }
+
+    /* Search Bar Styling */
+    .search-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .search-input {
+        padding: 15px 30px;
+        font-size: 14px;
+        font-family: "Josefin Sans";
+        max-width: 310px;
+        width: 100%;
+        border: none;
+      }
+
+      .search-button {
+        padding: 13px 30px;
+        font-size: 1rem;
+        background-color: $btn-bg-color-2;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid $border-color-white;
+
+        &:hover {
+          cursor: pointer;
+          background-color: $btn-bg-color;
+        }
+      }
+    }
+
+    /* Scroll Down text */
+    .scroll-text {
+      margin-top: 50px;
+      font-size: 14px;
+      font-family: "Josefin Sans";
+      letter-spacing: 2.8px;
+      line-height: 26px;
+      cursor: pointer;
+    }
+
+    .arrow-down {
+      cursor: pointer;
+      font-size: 14px;
+    }
+  }
+}
+
+/* Navigation */
+.main-nav {
+  background-color: $btn-bg-color-2;
+  padding: 20px 0;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+
+  .menu-btn,
+  .menu-icon {
+    display: none;
+  }
+
+  .nav-right {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+
+    li {
+      margin: 0 20px;
+
+      a {
+        text-decoration: none;
+        color: white;
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+/*Mobile and Tablet*/
+@media only screen and (min-width: 320px) and (max-width: 700px) {
+  .home {
+    .content {
+      .title {
+        font-size: 40px;
+      }
+
+      .subtitle {
+        font-size: 18px;
+      }
+
+      .search-container {
+        padding: 10px;
+        .search-input {
+          padding: 12px 30px;
+          font-size: 10px;
+        }
+
+        .search-button {
+          padding: 10px 20px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .main-nav {
+    display: block;
+
+    .nav-left {
+      float: left;
+    }
+
+    .nav-right {
+      max-height: none;
+      clear: both;
+      flex-direction: column;
+
+      li {
+        display: none;
+        cursor: pointer;
+        padding: 10px;
+        &:hover {
+          background: #302c2c;
+        }
+      }
+    }
+
+    /* Menu icon */
+    .menu-icon {
+      cursor: pointer;
+      display: block;
+      float: right;
+      padding: 10px;
+      position: relative;
+
+      .navicon {
+        background: $wheatish;
+        display: block;
+        height: 2px;
+        position: relative;
+        transition: all 0.2s ease-out;
+        width: 18px;
+
+        &:before {
+          top: 5px;
+        }
+
+        &:after {
+          top: -5px;
+        }
+
+        &:before,
+        &:after {
+          background: $wheatish;
+          content: "";
+          display: block;
+          height: 100%;
+          position: absolute;
+          transition: all 0.2s ease-out;
+          width: 100%;
+        }
+      }
+    }
+
+    .menu-btn {
+      display: none;
+
+      &:checked {
+        ~ .menu-icon {
+          .navicon {
+            background: transparent;
+            &::before {
+              top: 0;
+              transform: rotate(-45deg);
+            }
+            &::after {
+              top: 0;
+              transform: rotate(45deg);
+            }
+          }
+        }
+        ~ .nav-right {
+          max-height: 240px;
+          li {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}

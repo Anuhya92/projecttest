@@ -1,0 +1,31 @@
+@import "./_variables";
+
+.footer {
+  min-height: 271px;
+  background-color: $container-bg;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .header {
+      font-family: "Josefin Sans";
+      font-size: 24px;
+      letter-spacing: 3.36px;
+      color: $primary-text-color;
+    }
+
+    .description {
+      font-family: "Josefin Sans";
+      font-size: 16px;
+      line-height: 26px;
+      letter-spacing: 1.6px;
+      color: $primary-text-color;
+    }
+  }
+}

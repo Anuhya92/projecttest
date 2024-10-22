@@ -1,0 +1,4 @@
+.testimonial {
+  min-height: calc(100vh - 63px);
+  background: url("../images/testimonial-bg.png") center center no-repeat fixed;
+}
